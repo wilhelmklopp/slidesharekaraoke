@@ -1,0 +1,202 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Slideshow Karaoke</title>
+   <!-- <link rel="shortcut icon" type="image/png" href="{% static 'main/favicon.ico' %}"/>-->
+
+    <!-- Bootstrap Core CSS  -->
+    <link href="https://s3.eu-central-1.amazonaws.com/slidesharekaraoke/startbootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="https://s3.eu-central-1.amazonaws.com/slidesharekaraoke/startbootstrap/css/grayscale.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/png" href="https://s3.eu-central-1.amazonaws.com/slidesharekaraoke/favicon.ico"/>
+
+    <!-- Custom Fonts -->
+    <link href="https://s3.eu-central-1.amazonaws.com/slidesharekaraoke/startbootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Bootstraps -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        video { 
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+            transition: 1s opacity;
+        }
+    </style>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="background-color: #000000">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    Slideshow Karaoke
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="https://s3.eu-central-1.amazonaws.com/slidesharekaraoke/SlideShareKaraoke.apk">Download APK</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="https://github.com/IronSummitMedia/startbootstrap-grayscale/blob/gh-pages/LICENSE">Template Licence</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Slideshow Karaoke</h1>
+                        <p class="intro-text">The MLH classic, easier than ever before.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center" style="padding-top: 0px">
+        <div id="background-target"class="row" style="background-image: url('http://giant.gfycat.com/BreakableMediumHeterodontosaurus.gif'); background-repeat: no-repeat; height: 500px; width: 100%; background-size: cover;">
+            <div class="col-lg-8 col-lg-offset-2">
+            <form id="generate-random" action="/tag/" method="get" style="width: 100%; float: center;">
+                <br>
+                <center>
+                <button id="generate-random-submit" class="btn btn-danger" type="submit" style="z-index: 2">Random Slideshow</button>
+                </center>
+            </form>
+
+                <!--<video autoplay id="bgvid" loop muted>
+                    <source src="{% static 'main/ballmer.mp4' %}" type="video/mp4">
+                </video>-->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- jQuery -->
+    <script src="https://s3.eu-central-1.amazonaws.com/slidesharekaraoke/startbootstrap/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://s3.eu-central-1.amazonaws.com/slidesharekaraoke/startbootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://s3.eu-central-1.amazonaws.com/slidesharekaraoke/startbootstrap/js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="https://s3.eu-central-1.amazonaws.com/slidesharekaraoke/startbootstrap/js/grayscale.js"></script>
+
+    <script type="text/javascript">
+     var images = ["http://giant.gfycat.com/BreakableMediumHeterodontosaurus.gif", "http://i.giphy.com/DO9WQFLaAEnM4.gif", "http://i.giphy.com/xjMC4GtHNpNFC.gif", "http://i.giphy.com/vuDgDNRuINtyo.gif"];
+     $('#background-target').css({'background-image': 'url(' + images[Math.floor(Math.random() * images.length)] + ')'});
+    </script>
+    <script>
+        function createCookie(name,value,days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime()+(days*24*60*60*1000));
+                var expires = "; expires="+date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name+"="+value+expires+"; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        function ajax_get() {
+            $.ajax({
+                url: "/tag/",
+                data: {
+                    "min-slides": $("#min-slides").val(),
+                    "max-slides": $("#max-slides").val(),
+                    "all-languages": $("#all-languages").is(':checked'),
+                },
+                type: "GET",
+                dataType: "json",
+                success: function(json) {
+                    console.log("Success: " + json);
+                    console.dir(json);
+                    var slide_url = json.slide_url;
+                    createCookie("slide_url", slide_url, 1);
+                    }
+            });
+            console.log("AJAX request complete.");
+        }
+        ajax_get();
+        $('#generate-random').on('submit', function(e){
+            e.preventDefault();
+            console.log("default POST halted");
+            var slide_url = readCookie("slide_url");
+            window.open(slide_url,'_blank');
+            ajax_get();
+        });
+    </script>
+
+</body>
+
+</html>
